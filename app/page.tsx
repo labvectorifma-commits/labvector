@@ -73,7 +73,7 @@ const projetos = [
 
 export default function LabVector() {
   return (
-    <div className="min-h-screen bg-[#0B3D2E] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B3D2E] text-white overflow-x-hidden max-w-full">
       <style>{`
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
