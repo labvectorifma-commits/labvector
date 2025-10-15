@@ -73,7 +73,7 @@ const projetos = [
 
 export default function LabVector() {
   return (
-    <div className="min-h-screen bg-[#0B3D2E] text-white">
+    <div className="min-h-screen bg-[#0B3D2E] text-white overflow-x-hidden">
       <style>{`
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
@@ -314,14 +314,17 @@ export default function LabVector() {
             <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 text-center">
               <CardHeader>
                 <img
-                  src="/images/equipe/francisco.jpg"
-                  alt="Francisco Marques de Oliveira Neto"
-                  onError={(e) =>
-                    ((e.target as HTMLImageElement).src =
-                      'https://via.placeholder.com/150/0B3D2E/FFFFFF?text=Sem+Foto')
-                  }
-                  className="team-photo mx-auto mb-4 h-32 w-32 rounded-full object-cover border-2 border-green-500 shadow-lg"
-                />
+  src="/images/equipe/francisco.jpg"
+  alt="Francisco Marques de Oliveira Neto"
+  onError={(e) =>
+    ((e.target as HTMLImageElement).src =
+      "https://via.placeholder.com/150/0B3D2E/FFFFFF?text=Sem+Foto")
+  }
+  className="team-photo mx-auto mb-4 h-32 w-32 rounded-full object-cover border-2 border-green-400 shadow-md"
+  style={{
+    boxShadow: "0 0 10px rgba(0, 255, 128, 0.2)",
+  }}
+/>
                 <CardTitle className="text-white text-lg">Francisco Marques de Oliveira Neto</CardTitle>
                 <p className="text-green-300 text-sm mt-1">Coordenador do LabVector</p>
               </CardHeader>
