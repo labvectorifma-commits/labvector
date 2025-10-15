@@ -152,36 +152,59 @@ export default function LabVector() {
       </header>
 
       {/* SOBRE */}
-      <section id="sobre" className="relative flex flex-col items-center justify-center text-center py-24 overflow-hidden">
-        <motion.img
-          src="/banner.png"
-          alt="Banner"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          animate={{ scale: [1, 1.08, 1] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          style={{ filter: "brightness(0.4)" }}
-        />
-        <div className="absolute inset-0 bg-[#0B3D2E]/60" />
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 max-w-4xl px-6"
-        >
-          <img src="/logo.png" alt="Logo LabVector" className="mx-auto h-52 w-auto mb-8 drop-shadow-[0_0_24px_rgba(255,255,255,0.35)]" />
-          <h1 className="text-4xl font-bold mb-3">{LAB.name}</h1>
-          <p className="text-green-100 mb-6 text-lg">{LAB.tagline}</p>
-          <p className="text-green-100 mb-8 text-justify leading-relaxed">
-            O LabVector é um espaço dedicado à pesquisa aplicada em ecologia,
-            modelagem espacial, saúde pública e vigilância entomológica.
-            Desenvolvemos projetos que integram ciência, tecnologia e inovação
-            para compreender e prever padrões ambientais e epidemiológicos.
-          </p>
-          <Badge className="bg-green-600 text-white text-sm px-5 py-2 rounded-full shadow-lg">
-            Ciência • Ecologia • Inovação • Modelagem • Geoprocessamento • Vigilância
-          </Badge>
-        </motion.div>
-      </section>
+<section
+  id="sobre"
+  className="relative flex flex-col items-center justify-center text-center min-h-[85vh] md:min-h-screen px-4 py-16 overflow-hidden"
+>
+  <motion.img
+    src="/banner.png"
+    alt="Banner"
+    className="absolute inset-0 w-full h-full object-cover object-center"
+    animate={{ scale: [1, 1.08, 1] }}
+    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+    style={{ filter: "brightness(0.45)" }}
+  />
+
+  {/* camada de cor sobre o banner */}
+  <div className="absolute inset-0 bg-[#0B3D2E]/60" />
+
+  <motion.div
+    initial={{ opacity: 0, y: 25 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="relative z-10 max-w-3xl px-3"
+  >
+    {/* logo */}
+    <img
+      src="/logo.png"
+      alt="Logo LabVector"
+      className="mx-auto mb-6 h-32 w-auto sm:h-40 md:h-52 drop-shadow-[0_0_18px_rgba(255,255,255,0.25)]"
+    />
+
+    {/* nome do laboratório */}
+    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+      {LAB.name}
+    </h1>
+
+    {/* subtítulo */}
+    <p className="text-green-100 mb-4 text-base sm:text-lg md:text-xl">
+      {LAB.tagline}
+    </p>
+
+    {/* descrição */}
+    <p className="text-green-100 mb-6 text-sm sm:text-base md:text-lg leading-relaxed text-justify">
+      O LabVector é um espaço dedicado à pesquisa aplicada em ecologia,
+      modelagem espacial, saúde pública e vigilância entomológica. Desenvolvemos
+      projetos que integram ciência, tecnologia e inovação para compreender e
+      prever padrões ambientais e epidemiológicos.
+    </p>
+
+    {/* selo temático */}
+    <Badge className="bg-green-600 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-full shadow-md">
+      Ciência • Ecologia • Inovação • Modelagem • Geoprocessamento • Vigilância
+    </Badge>
+  </motion.div>
+</section>
 
       {/* PUBLICAÇÕES */}
       <section id="publicacoes" className="bg-[#145A32] py-16 border-y border-green-800">
@@ -320,10 +343,7 @@ export default function LabVector() {
     ((e.target as HTMLImageElement).src =
       "https://via.placeholder.com/150/0B3D2E/FFFFFF?text=Sem+Foto")
   }
-  className="team-photo mx-auto mb-4 h-32 w-32 rounded-full object-cover border-2 border-green-400 shadow-md"
-  style={{
-    boxShadow: "0 0 10px rgba(0, 255, 128, 0.2)",
-  }}
+  className="team-photo mx-auto mb-4 h-32 w-32 rounded-full object-cover border-2 border-green-500 shadow-md"
 />
                 <CardTitle className="text-white text-lg">Francisco Marques de Oliveira Neto</CardTitle>
                 <p className="text-green-300 text-sm mt-1">Coordenador do LabVector</p>
