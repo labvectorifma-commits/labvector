@@ -163,33 +163,33 @@ export default function LabVector() {
     </h2>
 
     {/* Publicação 1 — Artigo SciELO */}
-    <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 mb-8">
-      <CardHeader>
-        <CardTitle className="text-white">
-          Advances in mapping malaria for elimination: fine resolution modelling of Plasmodium falciparum incidence
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm mb-3 text-green-200">
-          <strong>Autores:</strong> Alegana, V. et al.
-        </p>
-        <p className="text-sm italic mb-4 text-green-300">
-          Scientific Reports, 2016.
-        </p>
-        <Button
-          asChild
-          className="mt-4 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-300 shadow-md"
-        >
-          <a
-            href="https://doi.org/10.1590/S0036-46652015000500002"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Acessar artigo completo
-          </a>
-        </Button>
-      </CardContent>
-    </Card>
+<Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 mb-8">
+  <CardHeader>
+    <CardTitle className="text-white">
+      Changes in the malaria transmission profile in a low-endemic area of the Brazilian Amazon: a cause for concern
+    </CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p className="text-sm mb-3 text-green-200">
+      <strong>Autores:</strong> Francisco Marques de Oliveira Neto, et al.
+    </p>
+    <p className="text-sm italic mb-4 text-green-300">
+      Revista do Instituto de Medicina Tropical de São Paulo, 2025.
+    </p>
+    <Button
+      asChild
+      className="mt-4 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-300 shadow-md"
+    >
+      <a
+        href="https://doi.org/10.1590/S1678-9946202567070"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Acessar artigo completo
+      </a>
+    </Button>
+  </CardContent>
+</Card>
 
     {/* Publicação 2 — Artigo sobre queimadas */}
     <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700">
