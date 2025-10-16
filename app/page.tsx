@@ -131,33 +131,31 @@ export default function LabVector() {
       `}</style>
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-[#0B3D2E]/90 border-b border-green-800">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.png"
-              alt="Logo LabVector"
-              className="h-20 w-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]"
-            />
-            <span className="font-semibold text-xl">LabVector</span>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#sobre" className="hover:text-green-300">Sobre</a>
-            <a href="#publicacoes" className="hover:text-green-300">Publicações</a>
-            <a href="#projetos" className="hover:text-green-300">Projetos</a>
-            <a href="#softwares" className="hover:text-green-300">Softwares</a>
-            <a href="#equipe" className="hover:text-green-300">Equipe</a>
-            <a href="#contato" className="hover:text-green-300">Contato</a>
-          </nav>
-        </div>
-      </header>
+<header className="sticky top-0 z-50 backdrop-blur bg-[#0B3D2E]/90 border-b border-green-800">
+  <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <div className="flex items-center gap-3">
+      <img
+        src="/logo.png"
+        alt="Logo LabVector"
+        className="h-20 w-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]"
+      />
+      <span className="font-semibold text-xl">LabVector</span>
+    </div>
+    <nav className="hidden md:flex gap-6 text-sm">
+      <a href="#sobre" className="hover:text-green-300">Sobre</a>
+      <a href="#publicacoes" className="hover:text-green-300">Publicações</a>
+      <a href="#projetos" className="hover:text-green-300">Projetos</a>
+      <a href="#softwares" className="hover:text-green-300">Softwares</a>
+      <a href="#equipe" className="hover:text-green-300">Equipe</a>
+      <a href="#contato" className="hover:text-green-300">Contato</a>
+    </nav>
+  </div>
+</header>
 
-      "use client";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
+{/* SOBRE */}
 <SobreSection LAB={LAB} />
-      {/* PUBLICAÇÕES */}
+
+{/* PUBLICAÇÕES */}
 <section id="publicacoes" className="bg-[#145A32] py-16 border-y border-green-800">
   <div className="max-w-6xl mx-auto px-6">
     <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
@@ -168,12 +166,16 @@ import { Badge } from "@/components/ui/badge";
     <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 mb-8">
       <CardHeader>
         <CardTitle className="text-white">
-          {artigo.titulo}
+          Advances in mapping malaria for elimination: fine resolution modelling of Plasmodium falciparum incidence
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-sm mb-3 text-green-200">{artigo.autores}</p>
-        <p className="text-sm italic mb-4 text-green-300">{artigo.revista}</p>
+        <p className="text-sm mb-3 text-green-200">
+          <strong>Autores:</strong> Alegana, V. et al.
+        </p>
+        <p className="text-sm italic mb-4 text-green-300">
+          Scientific Reports, 2016.
+        </p>
         <Button
           asChild
           className="mt-4 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-300 shadow-md"
@@ -327,37 +329,62 @@ import { Badge } from "@/components/ui/badge";
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Francisco */}
-            <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 text-center">
-              <CardHeader>
-                <img
-  src="/images/equipe/francisco.jpg"
-  alt="Francisco Marques de Oliveira Neto"
-  onError={(e) =>
-    ((e.target as HTMLImageElement).src =
-      "https://via.placeholder.com/150/0B3D2E/FFFFFF?text=Sem+Foto")
-  }
-  className="team-photo mx-auto mb-4 h-32 w-32 rounded-full object-cover border-2 border-green-500 shadow-md"
-/>
-                <CardTitle className="text-white text-lg">Francisco Marques de Oliveira Neto</CardTitle>
-                <p className="text-green-300 text-sm mt-1">Coordenador do LabVector</p>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm mb-4 text-green-200 list-disc list-inside text-left space-y-1">
-                  <li>Doutorando em Medicina Tropical (Fiocruz)</li>
-                  <li>Mestre em Desenvolvimento e Meio Ambiente (UFPI)</li>
-                  <li>Licenciado em Ciências Biológicas (UFPI)</li>
-                </ul>
-                <div className="flex justify-center gap-4 text-sm">
-                  <a href={LAB.lattesFrancisco} target="_blank" className="underline text-green-300">
-                    Lattes
-                  </a>
-                  <a href={LAB.orcidFrancisco} target="_blank" className="underline text-green-300">
-                    ORCID
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+<Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 text-center">
+  <CardHeader>
+    <img
+      src="/images/equipe/francisco.jpg"
+      alt="Francisco Marques de Oliveira Neto"
+      onError={(e) =>
+        ((e.target as HTMLImageElement).src =
+          "https://via.placeholder.com/150/0B3D2E/FFFFFF?text=Sem+Foto")
+      }
+      className="team-photo mx-auto mb-4 h-32 w-32 rounded-full object-cover border-2 border-green-500 shadow-md"
+    />
+    <CardTitle className="text-white text-lg">
+      Francisco Marques de Oliveira Neto
+    </CardTitle>
+    <p className="text-green-300 text-sm mt-1">
+      Coordenador do LabVector
+    </p>
+  </CardHeader>
 
+  <CardContent>
+    <ul className="text-sm mb-4 text-green-200 list-disc list-inside text-left space-y-1">
+      <li>Doutorando em Medicina Tropical (Fiocruz)</li>
+      <li>Mestre em Desenvolvimento e Meio Ambiente (UFPI)</li>
+      <li>Licenciado em Ciências Biológicas (UFPI)</li>
+    </ul>
+
+    <div className="flex justify-center gap-4 text-sm">
+      <a
+        href={LAB.lattesFrancisco}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-green-300 hover:text-green-100"
+      >
+        Lattes
+      </a>
+      <span className="text-green-500">•</span>
+      <a
+        href={LAB.orcidFrancisco}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-green-300 hover:text-green-100"
+      >
+        ORCID
+      </a>
+      <span className="text-green-500">•</span>
+      <a
+        href="https://www.researchgate.net/profile/Francisco-Marques-De-Oliveira-Neto?ev=hdr_xprf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-green-300 hover:text-green-100"
+      >
+        ResearchGate
+      </a>
+    </div>
+  </CardContent>
+</Card>
             {/* Marcelo */}
             <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 text-center">
               <CardHeader>
