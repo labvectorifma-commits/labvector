@@ -1,5 +1,6 @@
 "use client";
 
+import SobreSection from "@/components/SobreSection";
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -151,81 +152,73 @@ export default function LabVector() {
         </div>
       </header>
 
-      {/* SOBRE */}
-<section
-  id="sobre"
-  className="relative flex flex-col items-center justify-center text-center min-h-[85vh] md:min-h-screen px-4 py-16 overflow-hidden"
->
-  <motion.img
-    src="/banner.png"
-    alt="Banner"
-    className="absolute inset-0 w-full h-full object-cover object-center"
-    animate={{ scale: [1, 1.08, 1] }}
-    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-    style={{ filter: "brightness(0.45)" }}
-  />
-
-  {/* camada de cor sobre o banner */}
-  <div className="absolute inset-0 bg-[#0B3D2E]/60" />
-
-  <motion.div
-    initial={{ opacity: 0, y: 25 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-    className="relative z-10 max-w-3xl px-3"
-  >
-    {/* logo */}
-    <img
-      src="/logo.png"
-      alt="Logo LabVector"
-      className="mx-auto mb-6 h-32 w-auto sm:h-40 md:h-52 drop-shadow-[0_0_18px_rgba(255,255,255,0.25)]"
-    />
-
-    {/* nome do laboratório */}
-    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-      {LAB.name}
-    </h1>
-
-    {/* subtítulo */}
-    <p className="text-green-100 mb-4 text-base sm:text-lg md:text-xl">
-      {LAB.tagline}
-    </p>
-
-    {/* descrição */}
-    <p className="text-green-100 mb-6 text-sm sm:text-base md:text-lg leading-relaxed text-justify">
-      O LabVector é um espaço dedicado à pesquisa aplicada em ecologia,
-      modelagem espacial, saúde pública e vigilância entomológica. Desenvolvemos
-      projetos que integram ciência, tecnologia e inovação para compreender e
-      prever padrões ambientais e epidemiológicos.
-    </p>
-
-    {/* selo temático */}
-    <Badge className="bg-green-600 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-full shadow-md">
-      Ciência • Ecologia • Inovação • Modelagem • Geoprocessamento • Vigilância
-    </Badge>
-  </motion.div>
-</section>
-
+      "use client";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
+<SobreSection LAB={LAB} />
       {/* PUBLICAÇÕES */}
-      <section id="publicacoes" className="bg-[#145A32] py-16 border-y border-green-800">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
-            <BookOpen className="text-green-300" /> Publicações
-          </h2>
-          <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700">
-            <CardHeader>
-              <CardTitle className="text-white">{artigo.titulo}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm mb-3 text-green-200">{artigo.autores}</p>
-              <p className="text-sm italic mb-4 text-green-300">{artigo.revista}</p>
-              <Button asChild size="sm" variant="outline" className="border-green-400 text-white">
-                <a href={artigo.doi} target="_blank">Acessar artigo completo</a>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+<section id="publicacoes" className="bg-[#145A32] py-16 border-y border-green-800">
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
+      <BookOpen className="text-green-300" /> Publicações
+    </h2>
+
+    {/* Publicação 1 — Artigo SciELO */}
+    <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700 mb-8">
+      <CardHeader>
+        <CardTitle className="text-white">
+          {artigo.titulo}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm mb-3 text-green-200">{artigo.autores}</p>
+        <p className="text-sm italic mb-4 text-green-300">{artigo.revista}</p>
+        <Button
+          asChild
+          className="mt-4 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-300 shadow-md"
+        >
+          <a
+            href="https://doi.org/10.1590/S0036-46652015000500002"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar artigo completo
+          </a>
+        </Button>
+      </CardContent>
+    </Card>
+
+    {/* Publicação 2 — Artigo sobre queimadas */}
+    <Card className="rounded-2xl bg-[#0B3D2E] border border-green-700">
+      <CardHeader>
+        <CardTitle className="text-white">
+          Análise da distribuição das queimadas no cerrado maranhense, Brasil (2014–2018)
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm mb-3 text-green-200">
+          <strong>Autores:</strong> Francisco Marques de Oliveira Neto, Márcia Andréa Farias de Sousa, José Marcelino Pereira Neto
+        </p>
+        <p className="text-sm italic mb-4 text-green-300">
+          Revista Meio Ambiente e Sustentabilidade, 2020.
+        </p>
+        <Button
+          asChild
+          className="mt-4 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-300 shadow-md"
+        >
+          <a
+            href="https://www.revistasuninter.com/revistameioambiente/index.php/meioAmbiente/article/view/880"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar artigo completo
+          </a>
+        </Button>
+      </CardContent>
+    </Card>
+  </div>
+</section>
 
       {/* PROJETOS */}
       <section id="projetos" className="max-w-6xl mx-auto px-6 py-16">
