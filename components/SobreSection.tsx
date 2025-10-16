@@ -67,7 +67,9 @@ export default function SobreSection({ LAB }: Props) {
         <p className={`text-green-100 mb-4 ${taglineSize}`}>{LAB.tagline}</p>
 
         {/* descrição */}
-        <p className={`text-green-100 mb-6 ${descriptionSize} leading-relaxed text-justify`}>
+        <p
+          className={`text-green-100 mb-6 ${descriptionSize} leading-relaxed text-justify`}
+        >
           O LabVector é um espaço dedicado à pesquisa aplicada em ecologia,
           modelagem espacial, saúde pública e vigilância entomológica.
           Desenvolvemos projetos que integram ciência, tecnologia e inovação
@@ -76,10 +78,10 @@ export default function SobreSection({ LAB }: Props) {
 
         {/* selo temático */}
         <Badge className="bg-green-600 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-full shadow-md">
-          Ciência • Ecologia • Inovação • Modelagem • Geoprocessamento • Vigilância
+          Ciência • Ecologia • Inovação • Modelagem • Geoprocessamento •
+          Vigilância
         </Badge>
       </motion.div>
     </section>
   );
 }
-export default SobreSection;
